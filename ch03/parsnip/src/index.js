@@ -1,4 +1,5 @@
 import registerServiceWorker from './registerServiceWorker';
+import { devToolsEnhancer } from 'redux-devtools-extension';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -8,7 +9,7 @@ import tasks from './reducers';
 import App from './App';
 import './index.css';
 
-const store = createStore(tasks);
+const store = createStore(tasks, devToolsEnhancer());
 
 ReactDOM.render(
   <Provider store={store}>
